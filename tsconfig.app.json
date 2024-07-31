@@ -21,7 +21,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Paths and Alias */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@routes": ["src/routes/routes.ts"]
+    }
   },
   "include": ["src"]
 }
