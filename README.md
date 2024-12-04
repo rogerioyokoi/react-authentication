@@ -266,3 +266,92 @@ export default {
 - [ ] `passwordValidator`: Função para validar a complexidade da senha.
 - [ ] `twoFactorAuth`: Funções para gerar e validar códigos de 2FA.
 
+---
+# Fase 3: Privacidade e Segurança
+
+## Objetivo
+Esta fase se concentra na implementação de funcionalidades de **Privacidade e Segurança** dentro do módulo de autenticação. As funcionalidades incluem controle de permissões, configurações de segurança (como autenticação de dois fatores e regras de senha), e gestão da privacidade do usuário.
+
+## Funcionalidades
+
+### 1. **Gestão de Permissões**
+A gestão de permissões é uma parte crítica do sistema, permitindo que os administradores ou o próprio sistema controlem o acesso dos usuários a diferentes partes da aplicação. 
+
+- **Definição de Papéis de Usuário**:
+  - Administrador
+  - Moderador
+  - Usuário comum
+  
+- **Controle de Acesso**:
+  - Determinação de áreas e funcionalidades acessíveis com base nos papéis de usuário.
+  - **Exemplo**: Usuários comuns podem ver e editar seu perfil, mas apenas administradores podem acessar a área de configurações do sistema.
+
+### 2. **Regras de Segurança**
+As regras de segurança garantem que o sistema proteja as contas dos usuários contra acessos não autorizados e ataques maliciosos.
+
+- **Exigências de Senha**:
+  - A senha deve ter um comprimento mínimo (ex: 8 caracteres).
+  - A senha deve conter uma combinação de caracteres maiúsculos, minúsculos, números e caracteres especiais.
+
+- **Autenticação de Dois Fatores (2FA)**:
+  - **Configuração de 2FA**: Usuários podem habilitar a autenticação de dois fatores para adicionar uma camada extra de segurança.
+  - **Exemplo**: O sistema envia um código por e-mail ou mensagem de texto sempre que o usuário tentar acessar sua conta de um novo dispositivo ou após uma mudança de senha.
+
+- **Bloqueio de Conta**:
+  - O sistema pode bloquear temporariamente uma conta após várias tentativas de login malsucedidas.
+  - **Exemplo**: Após 5 tentativas de login falhas, a conta fica bloqueada por 30 minutos.
+
+### 3. **Página de Privacidade e Segurança**
+A página **Privacidade e Segurança** é onde o usuário pode configurar aspectos críticos relacionados à segurança da conta e visibilidade das suas informações.
+
+- **Alteração de Senha**:
+  - O usuário pode alterar sua senha, com validação das regras de segurança (ex: exigir senha atual e senha nova que atenda aos requisitos de complexidade).
+
+- **Configuração de Autenticação de Dois Fatores (2FA)**:
+  - O usuário pode ativar ou desativar a autenticação de dois fatores. Para ativar, o usuário precisará fornecer um método de verificação adicional (ex: número de telefone ou e-mail).
+  - **Exemplo**: O sistema envia um código para o e-mail ou número de telefone do usuário, que deve ser inserido para completar a configuração.
+
+- **Histórico de Login**:
+  - O usuário pode visualizar o histórico de logins, incluindo dispositivos e localizações de onde sua conta foi acessada. Isso ajuda o usuário a identificar acessos não autorizados.
+
+- **Controle de Visibilidade do Perfil**:
+  - O usuário pode escolher quem pode visualizar seu perfil e suas informações. 
+  - **Exemplo**: O usuário pode optar por manter seu **e-mail** visível apenas para amigos ou apenas para ele mesmo, ou permitir que **qualquer pessoa** veja sua foto de perfil.
+
+### 4. **Notificações de Segurança**
+- **Alertas de Login Suspeito**:
+  - O sistema envia alertas ao usuário quando há tentativas de login suspeitas ou acessos de novos dispositivos.
+  - **Exemplo**: "Alguém tentou acessar sua conta de um dispositivo desconhecido em São Paulo. Se não foi você, altere sua senha imediatamente."
+
+- **Notificação de Mudança de Senha**:
+  - O sistema envia um alerta por e-mail ou mensagem de texto sempre que a senha do usuário for alterada.
+
+---
+
+## Tarefas
+
+### 1. **Implementar Definição de Papéis e Controle de Acesso**
+- Definir papéis de usuários no sistema.
+- Implementar regras de acesso com base nos papéis.
+
+### 2. **Configurar Regras de Segurança**
+- Implementar regras de senha forte (mínimo de caracteres, complexidade).
+- Implementar autenticação de dois fatores (2FA).
+- Implementar bloqueio de conta após várias tentativas falhas de login.
+
+### 3. **Desenvolver Página de Privacidade e Segurança**
+- Adicionar a funcionalidade de alteração de senha.
+- Adicionar a configuração de autenticação de dois fatores (2FA).
+- Exibir histórico de login.
+- Implementar configurações de privacidade para controle de visibilidade de perfil.
+
+### 4. **Configurar Notificações de Segurança**
+- Implementar alertas de login suspeito.
+- Enviar notificação por e-mail ao alterar a senha.
+
+---
+
+## Considerações Finais
+A privacidade e segurança são essenciais para garantir a proteção dos dados e da identidade dos usuários. Implementar estas funcionalidades corretamente ajuda a evitar acessos não autorizados, promove a confiança no sistema e assegura que as informações do usuário sejam mantidas privadas.
+
+
