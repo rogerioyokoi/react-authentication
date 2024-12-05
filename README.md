@@ -1,357 +1,114 @@
-# React + TypeScript + Vite
+## Módulo de Autenticação - Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 1. Tela de Login
+- [ ] **Tarefa 1.1:** Criar campos de entrada para login
+  - [ ] **Subtarefa 1.1.1:** Adicionar campo de entrada de E-mail/Usuário.
+  - [ ] **Subtarefa 1.1.2:** Adicionar campo de entrada de Senha.
+- [ ] **Tarefa 1.2:** Criar botão de login
+  - [ ] **Subtarefa 1.2.1:** Implementar o botão de login com estilo de destaque.
+- [ ] **Tarefa 1.3:** Adicionar links de navegação
+  - [ ] **Subtarefa 1.3.1:** Criar link "Esqueceu a senha?".
+  - [ ] **Subtarefa 1.3.2:** Criar link "Criar conta".
+- [ ] **Tarefa 1.4:** Implementar validação de formulário
+  - [ ] **Subtarefa 1.4.1:** Validar que os campos não estão vazios.
+  - [ ] **Subtarefa 1.4.2:** Validar que o e-mail inserido é válido.
+  - [ ] **Subtarefa 1.4.3:** Validar que a senha atende aos critérios de segurança, como mínimo de caracteres e complexidade.
 
-Currently, two official plugins are available:
+### 2. Tela de Cadastro
+- [ ] **Tarefa 2.1:** Criar campos de entrada para cadastro
+  - [ ] **Subtarefa 2.1.1:** Adicionar campo de entrada de E-mail.
+  - [ ] **Subtarefa 2.1.2:** Adicionar campo de entrada de Nome de Usuário.
+  - [ ] **Subtarefa 2.1.3:** Adicionar campo de entrada de Senha.
+  - [ ] **Subtarefa 2.1.4:** Adicionar campo de entrada de Confirmar Senha.
+- [ ] **Tarefa 2.2:** Criar botão de cadastro
+  - [ ] **Subtarefa 2.2.1:** Implementar o botão de cadastro.
+- [ ] **Tarefa 2.3:** Implementar validação de formulário
+  - [ ] **Subtarefa 2.3.1:** Verificar se os campos não estão vazios.
+  - [ ] **Subtarefa 2.3.2:** Verificar se o e-mail já está registrado.
+  - [ ] **Subtarefa 2.3.3:** Verificar se as senhas coincidem.
+  - [ ] **Subtarefa 2.3.4:** Validar que a senha atende aos critérios de segurança.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 3. Tela de Recuperação de Senha
+- [ ] **Tarefa 3.1:** Criar campo de e-mail para recuperação
+  - [ ] **Subtarefa 3.1.1:** Adicionar campo de entrada de E-mail.
+- [ ] **Tarefa 3.2:** Criar botão de envio para recuperação
+  - [ ] **Subtarefa 3.2.1:** Adicionar botão "Enviar e-mail de recuperação".
+- [ ] **Tarefa 3.3:** Exibir instruções claras após envio
+  - [ ] **Subtarefa 3.3.1:** Exibir mensagem informando que as instruções foram enviadas.
 
-## Expanding the ESLint configuration
+### 4. Validação de Autenticação (Token)
+- [ ] **Tarefa 4.1:** Armazenar token de autenticação
+  - [ ] **Subtarefa 4.1.1:** Utilizar JWT ou outro token de autenticação armazenado no navegador.
+- [ ] **Tarefa 4.2:** Verificar o token ao carregar a aplicação
+  - [ ] **Subtarefa 4.2.1:** Implementar verificação do token durante o carregamento da aplicação.
+- [ ] **Tarefa 4.3:** Implementar renovação de token
+  - [ ] **Subtarefa 4.3.1:** Caso necessário, renovar o token ao atingir o tempo de expiração.
+- [ ] **Tarefa 4.4:** Redirecionar usuário caso o token seja inválido ou expirado
+  - [ ] **Subtarefa 4.4.1:** Redirecionar para a tela de login caso o token seja inválido ou expirado.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 5. Logout
+- [ ] **Tarefa 5.1:** Implementar função de logout
+  - [ ] **Subtarefa 5.1.1:** Remover token de autenticação do navegador.
+- [ ] **Tarefa 5.2:** Redirecionar para a tela de login após logout
+  - [ ] **Subtarefa 5.2.1:** Redirecionar o usuário para a tela de login após a ação de logout.
 
-- Configure the top-level `parserOptions` property like this:
+### 6. Gestão de Sessão
+- [ ] **Tarefa 6.1:** Manter sessão do usuário enquanto o token for válido
+  - [ ] **Subtarefa 6.1.1:** Implementar persistência da sessão do usuário.
+- [ ] **Tarefa 6.2:** Notificar o usuário caso a sessão expire
+  - [ ] **Subtarefa 6.2.1:** Exibir uma notificação informando que a sessão expirou.
+- [ ] **Tarefa 6.3:** Implementar autenticação persistente entre recargas de página
+  - [ ] **Subtarefa 6.3.1:** Garantir que o usuário não precise realizar login novamente após recarregar a página.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### 7. Exibição de Erros
+- [ ] **Tarefa 7.1:** Exibir mensagens de erro claras
+  - [ ] **Subtarefa 7.1.1:** Informar erro de "E-mail ou senha incorretos".
+  - [ ] **Subtarefa 7.1.2:** Informar "E-mail já registrado".
+  - [ ] **Subtarefa 7.1.3:** Informar "Senha fraca ou incompatível".
+- [ ] **Tarefa 7.2:** Implementar feedback visual de erro
+  - [ ] **Subtarefa 7.2.1:** Exibir bordas vermelhas e ícones de erro nos campos.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 8. Redirecionamento Condicional
+- [ ] **Tarefa 8.1:** Redirecionar após login
+  - [ ] **Subtarefa 8.1.1:** Redirecionar o usuário para a página inicial ou dashboard após login.
+- [ ] **Tarefa 8.2:** Redirecionar usuários não autenticados para login
+  - [ ] **Subtarefa 8.2.1:** Redirecionar usuários não autenticados para a tela de login quando tentarem acessar páginas restritas.
 
---------
+### 9. Proteção de Rotas
+- [ ] **Tarefa 9.1:** Criar componente `PrivateRoute`
+  - [ ] **Subtarefa 9.1.1:** Criar um componente para proteger rotas restritas.
+- [ ] **Tarefa 9.2:** Redirecionar para a tela de login se o usuário não estiver autenticado
+  - [ ] **Subtarefa 9.2.1:** Redirecionar o usuário para a tela de login ao tentar acessar uma rota privada sem autenticação.
 
-# Módulo de Autenticação - Front-End
-
-## Funcionalidades
-
-### 1. **Tela de Login**
-- [ ] Criar campos de entrada:
-  - [ ] E-mail/Usuário
-  - [ ] Senha
-- [ ] Criar botão de login.
-- [ ] Adicionar links:
-  - [ ] "Esqueceu a senha?"
-  - [ ] "Criar conta"
-- [ ] Implementar validação de formulário:
-  - [ ] Verificar se os campos não estão vazios.
-  - [ ] Verificar se o e-mail é válido.
-  - [ ] Verificar se a senha atende aos critérios de segurança.
-
-### 2. **Tela de Cadastro**
-- [ ] Criar campos de entrada:
-  - [ ] E-mail
-  - [ ] Nome de Usuário
-  - [ ] Senha
-  - [ ] Confirmar Senha
-- [ ] Criar botão de cadastro.
-- [ ] Implementar validação de formulário:
-  - [ ] Verificar se os campos não estão vazios.
-  - [ ] Verificar se o e-mail já está registrado.
-  - [ ] Verificar se as senhas coincidem.
-  - [ ] Verificar se a senha atende aos critérios de segurança.
-
-### 3. **Tela de Recuperação de Senha**
-- [ ] Criar campo de e-mail para recuperação.
-- [ ] Criar botão de envio para recuperar senha.
-- [ ] Exibir instruções claras após envio.
-
-### 4. **Validação de Autenticação (Token)**
-- [ ] Armazenar token de autenticação (JWT ou outro) no navegador.
-- [ ] Verificar o token ao carregar a aplicação.
-- [ ] Implementar renovação de token (se necessário).
-- [ ] Redirecionar usuário caso o token seja inválido ou expirado.
-
-### 5. **Logout**
-- [ ] Implementar função de logout para remover o token de autenticação.
-- [ ] Redirecionar para a tela de login após logout.
-
-### 6. **Gestão de Sessão**
-- [ ] Manter sessão do usuário enquanto o token for válido.
-- [ ] Notificar o usuário caso a sessão expire.
-- [ ] Implementar autenticação persistente entre recargas de página.
-
-### 7. **Exibição de Erros**
-- [ ] Exibir mensagens de erro claras:
-  - [ ] E-mail ou senha incorretos.
-  - [ ] E-mail já registrado.
-  - [ ] Senha fraca ou incompatível.
-- [ ] Implementar feedback visual (bordas vermelhas, ícones de erro).
-
-### 8. **Redirecionamento Condicional**
-- [ ] Redirecionar após login:
-  - [ ] Página inicial ou dashboard.
-- [ ] Redirecionar usuários não autenticados para login quando tentarem acessar páginas restritas.
-
-### 9. **Proteção de Rotas**
-- [ ] Criar componente `PrivateRoute` para proteger páginas restritas.
-- [ ] Redirecionar para a tela de login se o usuário não estiver autenticado.
-
-### 10. **Feedback de Sucesso**
-- [ ] Exibir mensagem de boas-vindas após login bem-sucedido.
-- [ ] Exibir mensagem de confirmação após cadastro bem-sucedido.
-- [ ] Enviar e-mail de confirmação de cadastro (se aplicável).
+### 10. Feedback de Sucesso
+- [ ] **Tarefa 10.1:** Exibir mensagem de boas-vindas após login bem-sucedido
+  - [ ] **Subtarefa 10.1.1:** Exibir mensagem personalizada para o usuário após login bem-sucedido.
+- [ ] **Tarefa 10.2:** Exibir mensagem de confirmação após cadastro bem-sucedido
+  - [ ] **Subtarefa 10.2.1:** Exibir mensagem de sucesso após o cadastro.
+- [ ] **Tarefa 10.3:** Enviar e-mail de confirmação de cadastro
+  - [ ] **Subtarefa 10.3.1:** Enviar e-mail de confirmação para o usuário após o cadastro (se aplicável).
 
 ---
 
-## Fluxo de Trabalho
+## Funcionalidades Avançadas
 
-1. **Login**
-   - [ ] O usuário preenche o formulário de login (e-mail/usuário e senha).
-   - [ ] Se as credenciais estiverem corretas, o token de autenticação é armazenado.
-   - [ ] Caso contrário, exibir erro.
+### 1. Validação Avançada de Senha
+- [ ] **Tarefa 1.1:** Implementar política de senha forte
+  - [ ] **Subtarefa 1.1.1:** Exigir pelo menos uma letra maiúscula, um número e um caractere especial na senha.
+- [ ] **Tarefa 1.2:** Exibir indicador de força de senha
+  - [ ] **Subtarefa 1.2.1:** Criar um indicador visual que mostre a força da senha enquanto o usuário a digita.
+- [ ] **Tarefa 1.3:** Verificação de senha vs. e-mail
+  - [ ] **Subtarefa 1.3.1:** Garantir que a senha não seja semelhante ao e-mail ou nome do usuário.
 
-2. **Cadastro**
-   - [ ] O usuário preenche o formulário de cadastro (e-mail, nome de usuário, senha).
-   - [ ] Se o e-mail já existir ou as senhas não coincidirem, exibir erro.
-   - [ ] Se o cadastro for bem-sucedido, redirecionar ou enviar e-mail de confirmação.
-
-3. **Recuperação de Senha**
-   - [ ] O usuário insere o e-mail e recebe instruções para redefinir a senha.
-
-4. **Logout**
-   - [ ] O usuário clica em "Logout", removendo o token e redirecionando para login.
-
-5. **Proteção de Rota**
-   - [ ] Páginas restritas devem ser protegidas e redirecionar para login se o usuário não estiver autenticado.
+### 2. Autenticação de Múltiplos Fatores (2FA)
+- [ ] **Tarefa 2.1:** Implementar autenticação de dois fatores
+  - [ ] **Subtarefa 2.1.1:** Enviar código de autenticação por e-mail ou SMS após login.
+- [ ] **Tarefa 2.2:** Permitir configuração de 2FA no perfil do usuário
+  - [ ] **Subtarefa 2.2.1:** Adicionar opção para o usuário ativar o 2FA no perfil.
 
 ---
 
-## Estrutura do Projeto
+Você pode ir marcando os itens conforme for concluindo as tarefas e subtarefas!
 
-### Componentes
-- [ ] `LoginForm`
-- [ ] `RegisterForm`
-- [ ] `PasswordRecoveryForm`
-- [ ] `PrivateRoute`
-- [ ] `AuthContext`
-
-### Utils
-- [ ] `authAPI`: Funções para interagir com APIs de autenticação.
-- [ ] `authHelpers`: Funções para manipulação de tokens.
-
-### Páginas
-- [ ] `LoginPage`
-- [ ] `RegisterPage`
-- [ ] `DashboardPage` (página protegida)
-- [ ] `HomePage` (página pública)
-
----
-
-# Funcionalidades Avançadas para o Módulo de Autenticação
-
-## 1. Validação Avançada de Senha
-- [ ] **Política de Senha Forte**:
-  - [ ] Exigir que a senha tenha pelo menos uma letra maiúscula, um número e um caractere especial.
-  - [ ] Exibir um indicador de força de senha durante o cadastro e atualização de senha.
-  
-- [ ] **Verificação de Senha vs. E-mail**:
-  - [ ] Garantir que a senha não seja similar ao e-mail ou nome do usuário.
-  
-## 2. Autenticação de Múltiplos Fatores (2FA)
-- [ ] Implementar autenticação de múltiplos fatores, com envio de código por e-mail ou SMS após o login.
-- [ ] Oferecer configuração de 2FA no painel do usuário.
-- [ ] Garantir que o código de 2FA tenha um tempo de expiração e limitação de tentativas.
-
-## 3. Autenticação via Redes Sociais (OAuth)
-- [ ] Implementar login via provedores de autenticação externa (Google, Facebook, GitHub, etc.) usando OAuth.
-- [ ] Permitir ao usuário conectar e desconectar suas contas de redes sociais.
-
-## 4. Login e Cadastro com Recuperação de Estado
-- [ ] **Recuperação Automática de Estado**:
-  - [ ] Após um erro de login ou recuperação, lembrar os campos preenchidos para que o usuário não precise refazer todo o processo.
-  
-- [ ] **Salvar Sessão de Forma Transparente**:
-  - [ ] Salvar o estado do login do usuário localmente (com JWT ou cookies) para que o login persista mesmo após a recarga da página, mantendo uma experiência de usuário fluida.
-  
-## 5. Gerenciamento de Sessões e Expiração
-- [ ] **Expiração de Sessão Automática**:
-  - [ ] Implementar a expiração do token de autenticação após um período inativo (ex: 15 minutos) e exigir novo login ou renovação do token.
-  
-- [ ] **Avisos de Sessão**:
-  - [ ] Exibir um aviso de "Sua sessão está prestes a expirar" e permitir ao usuário renovar a sessão.
-  
-- [ ] **Múltiplos Dispositivos**:
-  - [ ] Permitir que o usuário se autentique em múltiplos dispositivos e ofereça a opção de visualizar ou terminar sessões ativas de outros dispositivos.
-
-## 6. Recuperação de Conta
-- [ ] **Redefinição de Senha por E-mail Seguro**:
-  - [ ] Enviar um link de redefinição de senha por e-mail com validade limitada (ex: 24 horas).
-  
-- [ ] **Verificação de Identidade Adicional**:
-  - [ ] Implementar uma verificação adicional de identidade (como responder a uma pergunta de segurança) durante o processo de recuperação de conta.
-
-## 7. Interface de Usuário Melhorada
-- [ ] **Feedback Visual e Animações**:
-  - [ ] Melhorar o feedback do formulário de login/cadastro com animações e transições suaves (ex: animações ao focar nos campos ou ao mostrar erros).
-  
-- [ ] **Progressão Durante o Login**:
-  - [ ] Mostrar uma tela de progresso ou carregamento durante o processo de login e cadastro, para manter o usuário informado.
-
-## 8. Gestão de Perfil de Usuário
-- [ ] **Editar Perfil**:
-  - [ ] Permitir que o usuário edite informações do perfil, como nome, foto e configurações de conta (ex: preferências de idioma).
-  
-- [ ] **Alteração de Senha**:
-  - [ ] Criar uma interface onde o usuário possa alterar sua senha com confirmação da senha antiga.
-
-## 9. Monitoramento e Logs de Segurança
-- [ ] **Monitoramento de Tentativas de Login**:
-  - [ ] Monitorar tentativas de login falhas e implementar limitações de tentativas para evitar ataques de força bruta.
-  
-- [ ] **Alertas de Login Suspeito**:
-  - [ ] Enviar notificações ou e-mails de alerta quando um login suspeito ocorrer, como login de um novo dispositivo ou localização geográfica.
-
-## 10. Suporte a Idiomas
-- [ ] **Suporte a Múltiplos Idiomas**:
-  - [ ] Implementar internacionalização (i18n) para suportar diferentes idiomas na interface de autenticação.
-
-## 11. Teste de Acessibilidade
-- [ ] **Tornar os Formulários Acessíveis**:
-  - [ ] Garantir que os formulários de autenticação sejam acessíveis, com rótulos apropriados, suporte a leitores de tela e navegação por teclado.
-
-## 12. Design Responsivo
-- [ ] **Interface Mobile-Friendly**:
-  - [ ] Garantir que as telas de login, cadastro e recuperação de senha sejam responsivas e funcionem bem em dispositivos móveis.
-  
-- [ ] **Design de Tela de Login no Modal**:
-  - [ ] Permitir que a tela de login/cadastro apareça em um modal ou pop-up, sem redirecionamento de página.
-
----
-
-## Fluxo de Trabalho Aprofundado
-
-1. **Login com 2FA**:
-   - [ ] O usuário preenche o formulário de login.
-   - [ ] Após validação, se 2FA estiver habilitado, um código é enviado por e-mail/SMS.
-   - [ ] O usuário insere o código para concluir o login.
-
-2. **Cadastro com Políticas de Senha**:
-   - [ ] O usuário cria uma conta fornecendo e-mail, nome de usuário e senha forte.
-   - [ ] Após cadastro, se necessário, o usuário pode ativar 2FA.
-
-3. **Recuperação de Senha com Redefinição**:
-   - [ ] O usuário solicita recuperação de senha e recebe um link seguro.
-   - [ ] Após redefinir a senha, ele pode ser redirecionado para o login.
-
-4. **Segurança de Sessão com Expiração**:
-   - [ ] O usuário recebe um aviso de expiração de sessão e pode escolher renovar.
-   - [ ] Após o tempo limite de inatividade, o token expira e o usuário é desconectado.
-
-5. **Gerenciamento de Perfil**:
-   - [ ] O usuário pode editar seu perfil e alterar a senha diretamente na aplicação.
-
----
-
-## Arquitetura e Componentes Avançados
-
-### Componentes
-- [ ] `TwoFactorAuthForm`: Formulário de 2FA para entrada do código.
-- [ ] `ProfileSettings`: Interface para alterar configurações de perfil.
-- [ ] `PasswordStrengthMeter`: Medidor de força de senha.
-- [ ] `LoginAttemptMonitor`: Componente para monitorar tentativas de login falhas.
-
-### Utils
-- [ ] `sessionManager`: Funções para gerenciar a expiração e renovação de sessão.
-- [ ] `passwordValidator`: Função para validar a complexidade da senha.
-- [ ] `twoFactorAuth`: Funções para gerar e validar códigos de 2FA.
-
----
-# Fase 3: Privacidade e Segurança
-
-## Objetivo
-Esta fase se concentra na implementação de funcionalidades de **Privacidade e Segurança** dentro do módulo de autenticação. As funcionalidades incluem controle de permissões, configurações de segurança (como autenticação de dois fatores e regras de senha), e gestão da privacidade do usuário.
-
-## Funcionalidades
-
-### 1. **Gestão de Permissões**
-A gestão de permissões é uma parte crítica do sistema, permitindo que os administradores ou o próprio sistema controlem o acesso dos usuários a diferentes partes da aplicação. 
-
-- **Definição de Papéis de Usuário**:
-  - Administrador
-  - Moderador
-  - Usuário comum
-  
-- **Controle de Acesso**:
-  - Determinação de áreas e funcionalidades acessíveis com base nos papéis de usuário.
-  - **Exemplo**: Usuários comuns podem ver e editar seu perfil, mas apenas administradores podem acessar a área de configurações do sistema.
-
-### 2. **Regras de Segurança**
-As regras de segurança garantem que o sistema proteja as contas dos usuários contra acessos não autorizados e ataques maliciosos.
-
-- **Exigências de Senha**:
-  - A senha deve ter um comprimento mínimo (ex: 8 caracteres).
-  - A senha deve conter uma combinação de caracteres maiúsculos, minúsculos, números e caracteres especiais.
-
-- **Autenticação de Dois Fatores (2FA)**:
-  - **Configuração de 2FA**: Usuários podem habilitar a autenticação de dois fatores para adicionar uma camada extra de segurança.
-  - **Exemplo**: O sistema envia um código por e-mail ou mensagem de texto sempre que o usuário tentar acessar sua conta de um novo dispositivo ou após uma mudança de senha.
-
-- **Bloqueio de Conta**:
-  - O sistema pode bloquear temporariamente uma conta após várias tentativas de login malsucedidas.
-  - **Exemplo**: Após 5 tentativas de login falhas, a conta fica bloqueada por 30 minutos.
-
-### 3. **Página de Privacidade e Segurança**
-A página **Privacidade e Segurança** é onde o usuário pode configurar aspectos críticos relacionados à segurança da conta e visibilidade das suas informações.
-
-- **Alteração de Senha**:
-  - O usuário pode alterar sua senha, com validação das regras de segurança (ex: exigir senha atual e senha nova que atenda aos requisitos de complexidade).
-
-- **Configuração de Autenticação de Dois Fatores (2FA)**:
-  - O usuário pode ativar ou desativar a autenticação de dois fatores. Para ativar, o usuário precisará fornecer um método de verificação adicional (ex: número de telefone ou e-mail).
-  - **Exemplo**: O sistema envia um código para o e-mail ou número de telefone do usuário, que deve ser inserido para completar a configuração.
-
-- **Histórico de Login**:
-  - O usuário pode visualizar o histórico de logins, incluindo dispositivos e localizações de onde sua conta foi acessada. Isso ajuda o usuário a identificar acessos não autorizados.
-
-- **Controle de Visibilidade do Perfil**:
-  - O usuário pode escolher quem pode visualizar seu perfil e suas informações. 
-  - **Exemplo**: O usuário pode optar por manter seu **e-mail** visível apenas para amigos ou apenas para ele mesmo, ou permitir que **qualquer pessoa** veja sua foto de perfil.
-
-### 4. **Notificações de Segurança**
-- **Alertas de Login Suspeito**:
-  - O sistema envia alertas ao usuário quando há tentativas de login suspeitas ou acessos de novos dispositivos.
-  - **Exemplo**: "Alguém tentou acessar sua conta de um dispositivo desconhecido em São Paulo. Se não foi você, altere sua senha imediatamente."
-
-- **Notificação de Mudança de Senha**:
-  - O sistema envia um alerta por e-mail ou mensagem de texto sempre que a senha do usuário for alterada.
-
----
-
-## Tarefas
-
-### 1. **Implementar Definição de Papéis e Controle de Acesso**
-- Definir papéis de usuários no sistema.
-- Implementar regras de acesso com base nos papéis.
-
-### 2. **Configurar Regras de Segurança**
-- Implementar regras de senha forte (mínimo de caracteres, complexidade).
-- Implementar autenticação de dois fatores (2FA).
-- Implementar bloqueio de conta após várias tentativas falhas de login.
-
-### 3. **Desenvolver Página de Privacidade e Segurança**
-- Adicionar a funcionalidade de alteração de senha.
-- Adicionar a configuração de autenticação de dois fatores (2FA).
-- Exibir histórico de login.
-- Implementar configurações de privacidade para controle de visibilidade de perfil.
-
-### 4. **Configurar Notificações de Segurança**
-- Implementar alertas de login suspeito.
-- Enviar notificação por e-mail ao alterar a senha.
-
----
-
-## Considerações Finais
-A privacidade e segurança são essenciais para garantir a proteção dos dados e da identidade dos usuários. Implementar estas funcionalidades corretamente ajuda a evitar acessos não autorizados, promove a confiança no sistema e assegura que as informações do usuário sejam mantidas privadas.
 
 
