@@ -1,3 +1,43 @@
+## Tarefa 0: Configuração Inicial do Projeto
+
+**Objetivo**: Estabelecer as configurações iniciais essenciais para garantir que o projeto esteja bem estruturado, com integração contínua, fluxo de trabalho eficiente e suporte à internacionalização.
+
+### 1. Configuração da Internacionalização (i18n)
+- **Descrição**: Implementar a funcionalidade de internacionalização (i18n) no projeto, permitindo a tradução da interface para múltiplos idiomas.
+- **Tarefas**:
+  - Instalar as dependências necessárias para i18n.
+  - Configurar os arquivos de tradução e estrutura de idiomas.
+  - Integrar o suporte a idiomas na interface do usuário.
+  - Garantir que a aplicação suporte facilmente novos idiomas no futuro.
+
+### 2. Configuração do GitHub Actions
+- **Descrição**: Implementar a automação de fluxos de trabalho utilizando o GitHub Actions para integração e entrega contínuas (CI/CD).
+- **Tarefas**:
+  - Criar workflows para execução de testes automatizados, linting e build durante os processos de Pull Request e Merge.
+  - Configurar notificações e relatórios de falhas diretamente no repositório.
+  - Garantir que as alterações no código sejam automaticamente validadas antes da integração.
+
+### 3. Implementação da Estratégia de Git Flow
+- **Descrição**: Estabelecer um fluxo de trabalho Git eficiente, utilizando o Git Flow, para gerenciamento de versões e ramificação no desenvolvimento.
+- **Tarefas**:
+  - Definir as branches principais (`main` e `develop`) e as branches de suporte (`feature`, `release`, `hotfix`).
+  - Documentar as convenções e processos para criação de novas features, correções de bugs e lançamentos.
+  - Treinar a equipe sobre como utilizar o Git Flow de forma eficiente para facilitar o desenvolvimento colaborativo.
+
+### 4. Configuração do Processo de Build no Netlify
+- **Descrição**: Configurar o processo de build e deployment do projeto no Netlify, utilizando um subdomínio dedicado.
+- **Tarefas**:
+  - Criar a integração do repositório com o Netlify para automação de builds.
+  - Configurar variáveis de ambiente e garantir que o processo de build esteja funcionando corretamente.
+  - Definir e configurar o subdomínio onde o projeto será hospedado, garantindo que o processo de deploy seja automatizado sempre que novas alterações forem enviadas para o repositório.
+
+### Resultado Esperado:
+- O projeto estará com a configuração de internacionalização pronta, com suporte a múltiplos idiomas.
+- O fluxo de trabalho Git será bem estruturado e integrado com o GitHub Actions para garantir qualidade e automação.
+- O Netlify estará configurado para realizar o build e deploy automaticamente para o subdomínio definido.
+
+
+
 ## Módulo de Autenticação - Front-End
 
 ### 1. Tela de Login
